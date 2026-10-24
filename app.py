@@ -7,8 +7,6 @@ from tkinter import filedialog, messagebox, scrolledtext, ttk
 
 from iphone_transfer.core import transfer
 
-DEFAULT_DEST = r"C:\Users\Dell\Desktop\Projeler\DiskExplorer"
-
 
 def make_backend(demo_src):
     if demo_src:
@@ -26,7 +24,7 @@ class App(tk.Tk):
         self.demo_src = demo_src
         self.q = queue.Queue()
         self.cancel = threading.Event()
-        self.dest = tk.StringVar(value=DEFAULT_DEST)
+        self.dest = tk.StringVar()
         self.delete_after = tk.BooleanVar(value=True)
 
         top = ttk.Frame(self, padding=8)

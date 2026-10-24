@@ -7,7 +7,7 @@ keep both files: `IMG_0001.JPG`, `IMG_0001_1.JPG`, `IMG_0001_2.JPG`...
 ## Use
 1. Install Python 3.10+ for Windows, then `pip install -r requirements.txt`.
 2. Unlock the iPhone, connect by USB, tap **Trust**. Keep it unlocked during transfer.
-3. `python app.py`, the destination defaults to `C:\Users\Dell\Desktop\Projeler\DiskExplorer` (change it with Browse), click **Start**.
+3. `python app.py`, choose the destination folder, click **Start**.
 
 Try without a phone: `python app.py --demo C:\some\test\folder` (uses that folder as the "phone").
 Run tests: `python -m unittest discover tests`.
