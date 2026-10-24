@@ -1,4 +1,5 @@
 """iPhone -> folder transfer. Run: python app.py  (Windows; use --demo SRC to test with a folder)."""
+import os
 import queue
 import sys
 import threading
@@ -6,6 +7,9 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext, ttk
 
 from iphone_transfer.core import transfer
+
+# Transfers land next to the app, so everything stays in the folder you put it in.
+DEFAULT_DEST = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Transfers")
 
 
 def make_backend(demo_src):
@@ -24,7 +28,7 @@ class App(tk.Tk):
         self.demo_src = demo_src
         self.q = queue.Queue()
         self.cancel = threading.Event()
-        self.dest = tk.StringVar()
+        self.dest = tk.StringVar(value=DEFAULT_DEST)
         self.delete_after = tk.BooleanVar(value=True)
 
         top = ttk.Frame(self, padding=8)

@@ -7,7 +7,7 @@ keep both files: `IMG_0001.JPG`, `IMG_0001_1.JPG`, `IMG_0001_2.JPG`...
 ## Use
 1. Install Python 3.10+ for Windows, then `pip install -r requirements.txt`.
 2. Unlock the iPhone, connect by USB, tap **Trust**. Keep it unlocked during transfer.
-3. `python app.py`, choose the destination folder, click **Start**.
+3. `python app.py`, the destination defaults to a `Transfers` folder next to `app.py` (change it with Browse), click **Start**.
 
 Try without a phone: `python app.py --demo C:\some\test\folder` (uses that folder as the "phone").
 Run tests: `python -m unittest discover tests`.
@@ -16,3 +16,8 @@ Run tests: `python -m unittest discover tests`.
 - If a copy fails or the size doesn't match, that file is **not** deleted.
 - Turn off iCloud "Optimize iPhone Storage" or originals may be downloaded slowly or not at all.
 - The Windows/iPhone part was written without access to a real iPhone, so test with a few photos first.
+
+## Keeping everything in one folder
+Put the whole project in one folder (e.g. `C:\Users\Dell\Desktop\Projeler\DiskExplorer`), for example with
+`git clone -b claude/iphone-photo-video-transfer-hl3cbd <repo-url> C:\Users\Dell\Desktop\Projeler\DiskExplorer`.
+The app, its source and the transferred files (`Transfers\`) then all stay inside it.
